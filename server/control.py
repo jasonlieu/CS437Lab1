@@ -11,7 +11,6 @@ try:
     while True:
         # If object detected by ultrasonic sensor, turn right
         distance = measure_distance()
-        print(distance)
         if measure_distance() < STOP_DISTANCE:
             print(f"obstacle in {distance}cm, turn right")
             SpiderG.walk(Directions.TURN_RIGHT.value)
