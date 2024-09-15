@@ -570,7 +570,8 @@ def command_GenOut():
 	elif now_command == 'turnleft':
 		goal_GenOut(global_position, -1, 1)
 		position_ctrl('Dforward')
-	elif now_command == 'turnright':
+	elif now_command == (''
+						 'ight'):
 		goal_GenOut(global_position, 1, -1)
 		position_ctrl('Dforward')
 	elif now_command == 'stop':
@@ -737,8 +738,8 @@ class Servo_ctrl(threading.Thread):
 					servoStop()
 			else:
 				steady()
-				time.sleep(0.03)		
-			print('loop')
+				time.sleep(0.03)
+			# print('loop')
 
 	def pause(self):
 		self.__flag.clear()
@@ -783,7 +784,7 @@ class Head_ctrl(threading.Thread):
 				self.pause()
 
 			time.sleep(PT_deley)
-			print('loop')
+			# print('loop')
 
 
 
