@@ -1,11 +1,11 @@
 import time
 import numpy as np
 import heapq
-from constants import SYMBOLS, Directions
+from constants import SYMBOLS, Directions, Orientation
 import SpiderG
 from ultrasonic import measure_distance
 
-DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)]
+DIRECTIONS = [direction.value for direction in Orientation]
 TURN_TIME = 0.05
 
 # Scan and create a 2D grid
@@ -76,7 +76,7 @@ def a_star(grid, start, goal):
                 if grid[neighbor[0], neighbor[1]] == 1:  # Obstacle
                     continue
 
-                tentative_g_score = g_score[current] + 1  # Cost to neighbor is always 1 (or a fixed cost)
+                tentative_g_score = g_score[current] + 1
 
                 if neighbor not in g_score or tentative_g_score < g_score[neighbor]:
                     came_from[neighbor] = current
