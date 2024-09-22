@@ -1,5 +1,6 @@
 from ultrasonic import gpio_clean_up
-from mapping import *
+from SpiderG import move_init, servoStop
+from mapping import measure_distance, scan_360_to_grid, print_grid, print_grid_with_path, a_star
 
 GOAL = (0, 0) # (0,0) - (19, 19)
 
@@ -25,7 +26,7 @@ def go():
 grid_size = 20  # X and Y size
 try:
     # TODO aim for ~20 steps
-    SpiderG.move_init()
+    move_init()
     grid = scan_360_to_grid(grid_size, degree_step=20, distance_threshold=DISTANCE_THRESHOLD, max_distance=MAX_DISTANCE)
     start = (grid_size // 2, grid_size // 2)  # Starting point in center
     path = a_star(grid, start, GOAL)
@@ -37,4 +38,4 @@ try:
 finally:
     print("clean up")
     gpio_clean_up()
-    SpiderG.servoStop()
+    servoStop()
