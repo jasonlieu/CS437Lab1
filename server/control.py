@@ -1,7 +1,7 @@
 import SpiderG
 import time
 from ultrasonic import measure_distance, gpio_clean_up
-from directions import Directions
+from constants import Directions
 
 WALK_TIME = 5
 TURN_TIME = 5

@@ -7,3 +7,5 @@ class Directions(Enum):
     TURN_RIGHT = "turnright"
     LEAN_RIGHT = "Lean-R"
     LEAN_LEFT = "Lean-L"
+
+SYMBOLS = [".", "█", "s", "+"]
