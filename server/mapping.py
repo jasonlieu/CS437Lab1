@@ -2,7 +2,7 @@ import time
 import numpy as np
 import heapq
 from constants import SYMBOLS, Directions
-from server import SpiderG
+import SpiderG
 from ultrasonic import measure_distance
 
 DIRECTIONS = [(0, 1), (1, 0), (0, -1), (-1, 0), (1, 1), (-1, -1), (1, -1), (-1, 1)]
