@@ -20,7 +20,7 @@ def scan_360_to_grid(grid_size, degree_step, distance_threshold, max_distance):
         print("step", step, "/", total_steps)
         # Measure the distance
         distance = measure_distance()
-        angle = step * degree_step
+        angle = 360 - (step * degree_step) # Left turn scan
 
         # Calculate the position in Cartesian coordinates (relative to the center of the grid)
         if distance < max_distance:  # Only map distances within the sensor range
